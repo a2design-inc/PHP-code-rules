@@ -159,7 +159,7 @@ $name = $this->request->data['User’]['first_name'] . ' '
 **Пример:**
 
 ```PHP
-if ($a == $b) {
+if($a == $b) {
     echo 'Hello world!';
     echo 'Goodbye!';
 }
@@ -171,9 +171,9 @@ if ($a == $b) {
 **Пример:**
 
 ```PHP
-if ($var = 'foo') {
+if($var = 'foo') {
 	echo 'bar';
-} elseif ($var == 'baz') {
+} elseif($var == 'baz') {
 	echo 'qux';
 } else {
 	echo 'Something went wrong';
@@ -199,3 +199,49 @@ class MyClass implements MyInterface {
 
 ### Пропуск строк
 
+Пустыми строками выделяется каждый блок кода, заключенный в фигурные скобки, а также свойства классов. 
+*Исключение:* во множественном условном ветвении отбивка производится только перед начальным условием и после
+последней закрывающей фигурной скобки.
+
+Если в коде подряд идут несколько закрывающих фигурных скобок дополнительное выделение пустой строкой не производится.
+
+**Пример**
+
+```PHP
+class MyClass {
+
+	public $var = 'Some string';
+	
+	public funtion someMethod($a, $b) {
+	
+		if($a > $b) {
+			echo 'a more then b';
+		} elseif($a < $b) {
+			echo 'b more then a';
+		} else {
+			echo 'a equals b';
+		}
+	}
+}
+```
+
+Рекомендуется оставлять пустую строку перед оператором `return` и разбивать пустыми строками длинные участки кода,
+группируя логически связанные части.
+
+**Пример:**
+
+```PHP
+	function myFunction($paramOne, $paramTwo) {
+		$insanceOne = new SomeClass($paramOne);
+		
+		$instanceOne->setWidth(100);
+		$instanceOne->setHeight(80);
+		$instanceOne->setQuality(75);
+		
+		$instanceTwo = new OtherClass($paramTwo);
+		
+		$instanceTwo->render($instanceOne);
+		
+		return $instanceTwo->getRresult();
+	}
+```
