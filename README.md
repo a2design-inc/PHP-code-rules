@@ -64,7 +64,7 @@ class MyClass {
 **Пример:**
 
 ```PHP
-$string = subString1 . subString2;
+$string = $subString1 . $subString2;
 
 if (!$condition) {
 	$a = $b + $c - ($d / 10 * $i);
