@@ -33,7 +33,8 @@
 
 Используется для структурирования кода. Каждый новый вложенный уровень начинается с дополнительной табуляции.
 Вложенным уровним считается тело класса, функции, цикла и условия, а также элементы массива, при необходимости
-его записи в несколько строк (подробнее в разделе "Перенос строк").
+его записи в несколько строк, и операнды длинного выражения, разбитого на строки
+(подробнее в разделе "Перенос строк").
 
 **Пример:**
 
@@ -41,8 +42,8 @@
 class MyClass {
 
   public $myVar = array(
-    'item_one' = 1,
-    'item_two' = 2
+    'item_one' => 1,
+    'item_two' => 2
   );
 
   public function example($arg) {
@@ -66,7 +67,7 @@ class MyClass {
 $string = subString1 . subString2;
 
 if (!$condition) {
-    $a = $b + $c - ($d / 10 * $i);
+	$a = $b + $c - ($d / 10 * $i);
 }
 ```
 
@@ -75,7 +76,7 @@ if (!$condition) {
 **Пример:**
 
 ```PHP
-$title        = ‘some text’;
+$title        = 'some text';
 $orders_count = 5;
 $customers    = array ();
 ```
@@ -85,7 +86,7 @@ $customers    = array ();
 **Пример:**
 
 ```PHP
-str_replace(‘ ’, ‘_’, $string);
+str_replace(' ', '_', $string);
 ```
 
 При определении функции перед скобками с аргументами пробел не ставится.
@@ -96,4 +97,55 @@ str_replace(‘ ’, ‘_’, $string);
 function foo($message) {
     echo $message;
 }
+```
+
+## Перенос строк
+
+Длинные выражения необходимо разбивать на строки длиной не более 80 символов.
+
+При объявлении массива первый каждый последующий уровень вложенности выделяется дополнительной табуляцией 
+(подробнее в разделе "Табуляция").
+
+**Пример**
+
+```PHP
+$myArray = array(
+	'item_one' => 'Some string',
+	'item_two' => array(
+		1, 2, 3, 4, 5
+	)
+	...
+);
+```
+
+При необходимости записать в несколько строк список аргументов, принимаемый функцией, орматирование кода
+производится аналогично объявления массива.
+
+**Пример**
+
+```PHP
+$value = someFunction(
+	$firstVeryLongNameArgument,
+	$secondVeryLongNameArgument
+);
+```
+
+При необходимости разбиения на строки арифметического, логического или конкатинационного выражения
+каждая новая строка должна начинаться с оператора.
+
+**Пример:**
+
+```PHP
+$image_aspect_ratio = $this->request->data[‘Image’][‘with’]
+	/ $this->request->data[‘Image’][‘height’];
+	
+if (
+	$this->User->save($this->request->data)
+	&& $this->request->data[‘User’][‘subscribe’]
+) {
+	$this->Mailchimp->add_subscriber($this->request->data);
+}
+
+$name = $this->request->data[‘User’][‘first_name’] . ‘ ’
+	. $this->request->data[‘User’][‘last_name’];
 ```
