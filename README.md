@@ -136,16 +136,16 @@ $value = someFunction(
 **Пример:**
 
 ```PHP
-$image_aspect_ratio = $this->request->data[‘Image’][‘with’]
-	/ $this->request->data[‘Image’][‘height’];
+$image_aspect_ratio = $this->request->data['Image']['with']
+	/ $this->request->data['Image']['height'];
 	
 if (
 	$this->User->save($this->request->data)
-	&& $this->request->data[‘User’][‘subscribe’]
+	&& $this->request->data['User']['subscribe']
 ) {
 	$this->Mailchimp->add_subscriber($this->request->data);
 }
 
-$name = $this->request->data[‘User’][‘first_name’] . ‘ ’
-	. $this->request->data[‘User’][‘last_name’];
+$name = $this->request->data['User’]['first_name'] . ' '
+	. $this->request->data['User']['last_name'];
 ```
