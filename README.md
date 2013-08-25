@@ -194,7 +194,7 @@ class MyClass implements MyInterface {
 		return $a + $b;
 	}
 	
-	public funtion multiplication($a, $b) {}
+	public function multiplication($a, $b) {}
 }
 ```
 
