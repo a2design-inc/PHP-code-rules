@@ -231,17 +231,17 @@ class MyClass {
 **Пример:**
 
 ```PHP
-	function myFunction($paramOne, $paramTwo) {
-		$insanceOne = new SomeClass($paramOne);
+function myFunction($paramOne, $paramTwo) {
+	$insanceOne = new SomeClass($paramOne);
 		
-		$instanceOne->setWidth(100);
-		$instanceOne->setHeight(80);
-		$instanceOne->setQuality(75);
+	$instanceOne->setWidth(100);
+	$instanceOne->setHeight(80);
+	$instanceOne->setQuality(75);
 		
-		$instanceTwo = new OtherClass($paramTwo);
+	$instanceTwo = new OtherClass($paramTwo);
 		
-		$instanceTwo->render($instanceOne);
+	$instanceTwo->render($instanceOne);
 		
-		return $instanceTwo->getRresult();
-	}
+	return $instanceTwo->getRresult();
+}
 ```
