@@ -245,3 +245,11 @@ function myFunction($paramOne, $paramTwo) {
 	return $instanceTwo->getRresult();
 }
 ```
+
+## Строки
+
+### Выбор кавычек
+
+### Конкатинация и интерполяция
+
+## Комментарии
