@@ -148,7 +148,7 @@ if (
 	$this->Mailchimp->add_subscriber($this->request->data);
 }
 
-$name = $this->request->data['User’]['first_name'] . ' '
+$name = $this->request->data['User']['first_name'] . ' '
 	. $this->request->data['User']['last_name'];
 ```
 
