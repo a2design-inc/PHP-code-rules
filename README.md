@@ -97,6 +97,7 @@ str_replace(' ', '_', $string);
 
 ```PHP
 function foo($message) {
+
     echo $message;
 }
 ```
@@ -161,7 +162,7 @@ $name = $this->request->data['User']['first_name'] . ' '
 **Пример:**
 
 ```PHP
-if($a == $b) {
+if ($a == $b) {
     echo 'Hello world!';
     echo 'Goodbye!';
 }
@@ -173,9 +174,9 @@ if($a == $b) {
 **Пример:**
 
 ```PHP
-if($var = 'foo') {
+if ($var = 'foo') {
 	echo 'bar';
-} elseif($var == 'baz') {
+} elseif ($var == 'baz') {
 	echo 'qux';
 } else {
 	echo 'Something went wrong';
@@ -191,6 +192,7 @@ if($var = 'foo') {
 class MyClass implements MyInterface {
 
 	public function sum($a, $b) {
+
 		return $a + $b;
 	}
 	
@@ -217,7 +219,7 @@ class MyClass {
 
 		$a = 1;
 	
-		if($a > $b) {
+		if ($a > $b) {
 			echo 'a more then b';
 		} elseif($a < $b) {
 			echo 'b more then a';
@@ -237,9 +239,9 @@ class MyClass {
 ```PHP
 function myFunction($paramOne, $paramTwo) {
 
-	if($a > $b) {
+	if ($a > $b) {
 		return true;
-	} elseif($a < $b) {
+	} elseif ($a < $b) {
 		return true;
 	} else {
 		return false;
@@ -259,6 +261,7 @@ function myFunction($paramOne, $paramTwo) {
 
 ```PHP
 function myFunction($paramOne, $paramTwo) {
+
 	$insanceOne = new SomeClass($paramOne);
 		
 	$instanceOne->setWidth(100);
@@ -300,9 +303,9 @@ $stringTwo = "Some {$value}";
 **Пример:**
 
 ```PHP
-foreach($someArray as $key => $value) {
+foreach ($someArray as $key => $value) {
 
-	if(($key % 2) == 0) {
+	if (($key % 2) == 0) {
 		$even .= $value;
 	} else {
 		$odd .= $value;
