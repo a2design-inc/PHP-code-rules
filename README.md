@@ -221,7 +221,7 @@ class MyClass {
 	
 		if ($a > $b) {
 			echo 'a more then b';
-		} elseif($a < $b) {
+		} elseif ($a < $b) {
 			echo 'b more then a';
 		} else {
 			echo 'a equals b';
