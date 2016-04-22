@@ -153,6 +153,18 @@ $name = $this->request->data['User']['first_name'] . ' '
 	. $this->request->data['User']['last_name'];
 ```
 
+В цепочке вызовов методов каждый новый вызов (кроме первого) переносится на наовую строку.
+
+**Пример**
+
+```PHP
+$report['projects_processed_in_date_range'] = $project->where('date_imported', '>=', $dateFrom)
+    ->where('date_imported', '<', $dateTo)
+    ->where('processed', 1)
+    ->get()
+    ->toArray();
+```
+
 ## Блоки кода
 
 ### Фигурные скобки
